@@ -10,6 +10,7 @@ selección de las n variables más relevantes usando una prueba f.
 # pylint: disable=unsubscriptable-object
 
 import pandas as pd
+import numpy as np
 
 
 def pregunta_01():
@@ -126,12 +127,12 @@ def pregunta_03():
     # parámetros. Use cv = 5, y como métrica de evaluación el valor negativo del
     # error cuadrático medio.
     gridSearchCV = GridSearchCV(
-        estimator=____,
+        estimator = pipeline,
         param_grid = param_grid,
         cv = 5,
         scoring = 'neg_mean_squared_error',
-        refit=____,
-        return_train_score=____,
+        refit = True,
+        return_train_score = True,
     )
 
     # Búsque la mejor combinación de regresores
